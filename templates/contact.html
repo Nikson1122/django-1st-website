@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %} Contact {% endblock title %}
+{% block body %}
+<div class ="container-fluid mb-3">
+<img src="https://images.unsplash.com/photo-1710092673366-68f0114d3db1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100 mx-4 my-4" alt="contact">
+</div>
+<div class="container mb-3 py=4">
+<h1 class="text-center">Contact Us</h1>
+<form method="POST" action="/contact">
+{% csrf_token %}
+    <div class="mb-3">
+        <label for="exampleInputName" class="form-label">Name</label>
+        <input type="Name" class="form-control" id="exampleInputName" name="name" aria-describedby="NameHelp" placeholder ="Enter Your Name">
+       
+      </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp"placeholder ="Enter Your Email">
+   
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPhone" class="form-label">Phone Number</label>
+        <input type="phone" class="form-control" id="exampleInputPhone" name="phone" aria-describedby="phonelHelp"placeholder ="Enter Your phone Number">
+
+      </div>
+      <div class="mb-3">
+        <label for="desc">Tell the Purpose You Want to Contact To me</label>
+        <textarea class="form-control" id="desc" rows="3" name="desc"></textarea>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Enter Your Password">
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Confirm</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+
+{% endblock body %}
